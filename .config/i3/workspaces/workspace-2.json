@@ -1,0 +1,25 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+        "height": 1149,
+        "width": 956,
+        "x": 1922,
+        "y": 24
+    },
+    "marks": [],
+    "name": "Saving an i3 Workspace Layout | Wes Kennedy - Google Chrome",
+    "percent": 1,
+    "swallows": [
+        {
+            "class": "^Google\\-chrome$"
+            // "instance": "^google\\-chrome$",
+            // "machine": "^kheritage\\-Precision\\-3650\\-Tower$",
+            // "title": "^Saving\\ an\\ i3\\ Workspace\\ Layout\\ \\|\\ Wes\\ Kennedy\\ \\-\\ Google\\ Chrome$",
+            // "window_role": "^browser$"
+        }
+    ],
+    "type": "con"
+}

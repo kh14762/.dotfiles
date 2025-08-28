@@ -1,0 +1,25 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+        "height": 1163,
+        "width": 1114,
+        "x": 1920,
+        "y": 37
+    },
+    "marks": [],
+    "name": "http://10.0.0.10:8080/api/platform - My Workspace",
+    "percent": 1,
+    "swallows": [
+        {
+            "class": "^Postman$",
+            "instance": "^postman$"
+            // "machine": "^kheritage\\-Precision\\-3650\\-Tower$",
+            // "title": "^http\\:\\/\\/10\\.0\\.0\\.10\\:8080\\/api\\/platform\\ \\-\\ My\\ Workspace$",
+            // "window_role": "^browser\\-window$"
+        }
+    ],
+    "type": "con"
+}
