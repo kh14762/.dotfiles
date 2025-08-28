@@ -6,7 +6,7 @@ prompt adam1
 
 setopt histignorealldups sharehistory
 
-# Use emacs keybindings even if our EDITOR is set to vi
+# Use Vim keybinds
 bindkey -v
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
