@@ -188,6 +188,5 @@ bar {
 # @Kevin Heritage
 
 # Start predefined workspaces (~/.config/i3/workspaces/workspace-*.json)
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/kheritage/.config/i3/workspaces/workspace-1.json; exec i3-senible-terminal start -- tmux'"
-exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/kheritage/.config/i3/workspaces/workspace-2.json; exec google-chrome'"
-exec --no-startup-id "i3-msg 'workspace 3; append_layout /home/kheritage/.config/i3/workspaces/workspace-3.json; exec postman; workspace 1'"
+exec --no-startup-id "i3-msg 'workspace 1; exec i3-sensible-terminal'"
+exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/kheritage/.config/i3/workspaces/workspace-2.json; exec google-chrome; workspace 1'"
