@@ -52,3 +52,5 @@ alias gm='git merge'
 alias gpl='git pull'
 alias gpu='git push'
 alias gst='git status'
+
+export TERMINAL=ghostty
