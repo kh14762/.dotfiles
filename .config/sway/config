@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term gnome-terminal
+set $term ghostty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -228,8 +228,8 @@ bar {
 include /etc/sway/config.d/*
 
 # @Kevin Heritage
-# launch gnome-terminal and start tmux on workspace 1
-exec --no-startup-id swaymsg 'workspace 1; exec --no-startup-id gnome-terminal start -- tmux; exec sleep 0.3'
+# launch terminal and start tmux on workspace 1
+exec --no-startup-id swaymsg 'workspace 1; exec --no-startup-id ghostty start -- tmux; exec sleep 0.3'
 # launch firefox on workspace 2
 exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id firefox'
 # return to workspace 1 after startup
