@@ -35,3 +35,20 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+# @Kevin Heritage
+alias vim='nvim'
+export PATH="$HOME/local/nvim/bin:$PATH"
+
+# Git commands
+alias g='git'
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
+alias gco='git checkout'
+alias gf='git fetch'
+alias gl='lazygit'
+alias gm='git merge'
+alias gpl='git pull'
+alias gpu='git push'
+alias gst='git status'
