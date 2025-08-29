@@ -56,3 +56,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.hl.on_yank()
   end,
 })
+
+-- Snyssfx/goerr-nvim
+vim.opt.foldmethod = "syntax"
+vim.opt.syntax = "on"

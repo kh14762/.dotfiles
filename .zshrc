@@ -54,3 +54,6 @@ alias gpu='git push'
 alias gst='git status'
 
 export TERMINAL=ghostty
+
+# fd find
+alias fd='fd-find'
