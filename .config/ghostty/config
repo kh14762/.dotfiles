@@ -2,3 +2,4 @@
 
 # Hide the title-bar
 gtk-titlebar = false
+keybind = shift+enter=text:\x1b\r
