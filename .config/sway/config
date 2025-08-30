@@ -24,8 +24,9 @@ include /etc/sway/config-vars.d/*
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# (more resolutions are available in /usr/share/backgrounds/sway/)
+output DP-2 bg /usr/share/backgrounds/sway/wallhaven-6loo86.jpg fill
+output HDMI-A-1 bg /usr/share/backgrounds/sway/wallhaven-k87kj6.jpg fill
 #
 # Example configuration:
 #
