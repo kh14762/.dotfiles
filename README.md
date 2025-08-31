@@ -19,8 +19,6 @@ apt install stow
 
 ## Installation 
 
-First, checkout the .dotfiles repo in your $HOME directory using git
-
 ```
 $ git@github.com:kh14762/.dotfiles.git
 $ cd .dotfiles
@@ -31,3 +29,5 @@ then use GNU stow to create symlinks
 ```
 $ stow .
 ```
+
+The inspiration for this configuration comes from the [dotfiles by dreamsofcode]([https://www.example.com](https://github.com/dreamsofcode-io/dotfiles))
