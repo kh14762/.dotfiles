@@ -30,4 +30,4 @@ then use GNU stow to create symlinks
 $ stow .
 ```
 
-The inspiration for this configuration comes from the [dotfiles by dreamsofcode]([https://www.example.com](https://github.com/dreamsofcode-io/dotfiles))
+The inspiration for this configuration comes from the [dotfiles of dreamsofcode](https://github.com/dreamsofcode-io/dotfiles)
