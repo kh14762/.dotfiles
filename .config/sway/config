@@ -230,7 +230,7 @@ include /etc/sway/config.d/*
 
 # @Kevin Heritage
 # launch terminal and start tmux on workspace 1
-exec --no-startup-id swaymsg 'workspace 1; exec --no-startup-id ghostty start -- tmux; exec sleep 0.3'
+exec --no-startup-id swaymsg 'workspace 1; exec --no-startup-id ghostty; exec sleep 0.3'
 # launch firefox on workspace 2
 exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id firefox'
 # return to workspace 1 after startup
