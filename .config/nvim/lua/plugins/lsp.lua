@@ -22,10 +22,10 @@ return {
               },
               hints = {
                 assignVariableTypes = true,
-                compositeLiteralFields = true,
+                compositeLiteralFields = false,
                 compositeLiteralTypes = true,
                 constantValues = true,
-                functionTypeParameters = true,
+                functionTypeParameters = false,
                 parameterNames = true,
                 rangeVariableTypes = true,
               },

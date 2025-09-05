@@ -71,7 +71,7 @@ ZSH_THEME="eastwood"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,7 +114,11 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 # @Kevin Heritage
-export PATH="$HOME/neovim/bin:$PATH"
+if [ -d "$HOME/neovim/bin:$PATH" ] ; then
+    PATH="$HOME/neovim/bin:$PATH"
+else
+    PATH="$HOME/local/nvim/bin:$PATH"
+fi
 alias vim='nvim'
 
 # Git commands
@@ -127,6 +131,10 @@ alias gf='git fetch'
 alias gl='lazygit'
 
 export TERMINAL=ghostty
+
+# xcape to map <ESC> to <CAPS_LOCK>
+setxkbmap -option caps:ctrl_modifier
+xcape -e 'Caps_Lock=Escape'
 
 # Bat
 # Highlight help msgs
