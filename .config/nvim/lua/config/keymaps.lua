@@ -23,9 +23,14 @@ vim.keymap.set("v", ">", ">gv")
 
 -- Switch between tmux panes
 vim.keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { desc = "Move to the left window", remap = true })
-vim.keymap.set("n", "<C-j>", "<cmd> TmuxNavigateRight<CR>", { desc = "Move to the bottom window", remap = true })
-vim.keymap.set("n", "<C-k>", "<cmd> TmuxNavigateDown<CR>", { desc = "Move to the top window", remap = true })
-vim.keymap.set("n", "<C-l>", "<cmd> TmuxNavigateUp<CR>", { desc = "Move to the right window", remap = true })
+vim.keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "Move to the bottom window", remap = true })
+vim.keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "Move to the top window", remap = true })
+vim.keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "Move to the right window", remap = true })
 
 -- make U opposite of u.
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
+
+-- Go-specific keymaps
+vim.keymap.set("n", "<leader>co", function()
+  vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
+end, { desc = "Organize Imports" })

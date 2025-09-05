@@ -4,6 +4,33 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# Styles
+set $theme /usr/share/themes/yaru-sway
+
+# theme variables
+include $theme/variables
+
+# Global variables
+include /etc/sway/variables
+
+# User variables
+include $HOME/.config/sway/variables.d/*.conf
+
+include /etc/sway/outputs/*.conf
+include /etc/sway/inputs/*.conf
+
+# include modes
+include /etc/sway/modes/*.conf
+
+# Additional configs
+include /etc/sway/config.d/*.conf
+
+# User config
+include $HOME/.config/sway/config.d/*.conf
+
+# Include nwg-displays config's (if exists)
+include ~/.config/sway/outputs
+include ~/.config/sway/workspaces
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -13,20 +40,21 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
-set $term ghostty
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 include /etc/sway/config-vars.d/*
 
+# Override terminal to use ghostty
+set $term ghostty
+
 ### Output configuration
-#
 # (more resolutions are available in /usr/share/backgrounds/sway/)
-output DP-2 bg /usr/share/backgrounds/sway/wallhaven-6loo86.jpg fill
-output HDMI-A-1 bg /usr/share/backgrounds/sway/wallhaven-k87kj6.jpg fill
+# output DP-2 bg /usr/share/backgrounds/sway/wallhaven-6loo86.jpg fill
+# output HDMI-A-1 bg /usr/share/backgrounds/sway/wallhaven-k87kj6.jpg fill
 #
 # Example configuration:
 #
@@ -208,29 +236,11 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
-
-include /etc/sway/config.d/*
+# include /etc/sway/config.d/*
 
 # @Kevin Heritage
 # launch terminal and start tmux on workspace 1
-exec --no-startup-id swaymsg 'workspace 1; exec --no-startup-id ghostty; exec sleep 0.3'
+exec --no-startup-id swaymsg 'workspace 1; exec --no-startup-id $term; exec sleep 0.3'
 # launch firefox on workspace 2
 exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id firefox'
 # return to workspace 1 after startup
