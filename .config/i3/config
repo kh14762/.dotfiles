@@ -48,6 +48,10 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 # start a browser
 bindsym $mod+b exec google-chrome
+# start intellij
+bindsym $mod+i exec idea
+# start postman 
+bindsym $mod+p exec postman
 
 # kill focused window
 bindsym $mod+Shift+q kill
