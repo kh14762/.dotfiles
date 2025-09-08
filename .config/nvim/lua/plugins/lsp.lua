@@ -21,13 +21,13 @@ return {
                 vendor = true,
               },
               hints = {
-                assignVariableTypes = true,
+                assignVariableTypes = false,
                 compositeLiteralFields = false,
-                compositeLiteralTypes = true,
+                compositeLiteralTypes = false,
                 constantValues = true,
                 functionTypeParameters = false,
-                parameterNames = true,
-                rangeVariableTypes = true,
+                parameterNames = false,
+                rangeVariableTypes = false,
               },
               analyses = {
                 fieldalignment = true,

@@ -66,12 +66,15 @@ ZSH_THEME="eastwood"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+autoload -U compinit; compinit
+source ~/.oh-my-zsh/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git fzf-tab)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,10 +117,13 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 # @Kevin Heritage
+
 if [ -d "$HOME/neovim/bin:$PATH" ] ; then
     PATH="$HOME/neovim/bin:$PATH"
-else
+elif [ -d "$HOME/local/nvim/bin:$PATH" ] ; then
     PATH="$HOME/local/nvim/bin:$PATH"
+else
+    PATH="$HOME/opt/neovim/bin:$PATH"
 fi
 alias vim='nvim'
 
@@ -130,11 +136,11 @@ alias gco='git checkout'
 alias gf='git fetch'
 alias gl='lazygit'
 
-export TERMINAL=ghostty
+export TERM=ghostty
 
 # xcape to map <ESC> to <CAPS_LOCK>
-setxkbmap -option caps:ctrl_modifier
-xcape -e 'Caps_Lock=Escape'
+#setxkbmap -option caps:ctrl_modifier
+#xcape -e 'Caps_Lock=Escape'
 
 # Bat
 # Highlight help msgs
@@ -187,3 +193,7 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+# Set zoxide alias to cd
+alias cd="z"
+eval "$(zoxide init zsh)"

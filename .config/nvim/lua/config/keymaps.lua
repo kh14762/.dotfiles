@@ -30,6 +30,16 @@ vim.keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "Move to th
 -- make U opposite of u.
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 
+-- Disable Alt+j/k keymaps in various modes
+vim.keymap.set("i", "<A-j>", "<Nop>")
+vim.keymap.set("i", "<A-k>", "<Nop>")
+vim.keymap.set("n", "<A-j>", "<Nop>")
+vim.keymap.set("n", "<A-k>", "<Nop>")
+vim.keymap.set("x", "<A-j>", "<Nop>")
+vim.keymap.set("x", "<A-k>", "<Nop>")
+vim.keymap.set("x", "J", "<Nop>")
+vim.keymap.set("x", "K", "<Nop>")
+
 -- Go-specific keymaps
 vim.keymap.set("n", "<leader>co", function()
   vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
