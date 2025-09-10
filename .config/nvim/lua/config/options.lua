@@ -6,6 +6,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- disable mouse
+vim.opt.mouse = ""
+
 -- Make line numbers defaults
 vim.o.number = true
 -- Set relative line numbers

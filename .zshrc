@@ -197,3 +197,24 @@ fi
 # Set zoxide alias to cd
 alias cd="z"
 eval "$(zoxide init zsh)"
+
+# Claude tmux launcher
+launch_claude() {
+    if tmux has-session -t claude 2>/dev/null; then
+        if [ -n "$TMUX" ]; then
+            tmux switch-client -t claude
+        else
+            tmux attach-session -t claude
+        fi
+    else
+        if [ -n "$TMUX" ]; then
+            tmux new-session -d -s claude 'claude'
+            tmux switch-client -t claude
+        else
+            tmux new-session -d -s claude 'claude'
+            tmux attach-session -t claude
+        fi
+    fi
+}
+
+alias vibe='launch_claude'
