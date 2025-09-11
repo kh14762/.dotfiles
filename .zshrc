@@ -136,7 +136,7 @@ alias gco='git checkout'
 alias gf='git fetch'
 alias gl='lazygit'
 
-export TERM=ghostty
+# export TERM=ghostty
 
 # xcape to map <ESC> to <CAPS_LOCK>
 #setxkbmap -option caps:ctrl_modifier
@@ -198,8 +198,16 @@ fi
 alias cd="z"
 eval "$(zoxide init zsh)"
 
+
+
 # Claude tmux launcher
 launch_claude() {
+    # Check if claude exists
+    if [ ! -e claude ]; then
+      echo "claude not installed..."
+      return 
+    fi
+
     if tmux has-session -t claude 2>/dev/null; then
         if [ -n "$TMUX" ]; then
             tmux switch-client -t claude
