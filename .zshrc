@@ -7,7 +7,7 @@ ZSH_THEME="eastwood"
 
 autoload -U compinit; compinit
 
-plugins=(git nvm)
+plugins=(git nvm fzf-tab)
 
 source $ZSH/oh-my-zsh.sh
 
