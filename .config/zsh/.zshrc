@@ -34,14 +34,6 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 # @Kevin Heritage
-
-if [ -d "$HOME/neovim/bin:$PATH" ] ; then
-    PATH="$HOME/neovim/bin:$PATH"
-elif [ -d "$HOME/local/nvim/bin:$PATH" ] ; then
-    PATH="$HOME/local/nvim/bin:$PATH"
-else
-    PATH="$HOME/opt/neovim/bin:$PATH"
-fi
 alias vim='nvim'
 
 # Git commands
@@ -69,13 +61,6 @@ fi
 if [ -f /usr/share/doc/fzf/examples/completion.zsh ]; then
   source /usr/share/doc/fzf/examples/completion.zsh
 fi
-
-# Preview file content using bat (https://github.com/sharkdp/bat)
-export FZF_CTRL_T_OPTS="
-  --walker-skip .git,node_modules,target
-  --preview 'bat -n --color=always {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'
-"
 
 # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
