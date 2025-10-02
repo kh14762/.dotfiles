@@ -23,7 +23,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# @Kevin Heritage
 alias cat="batcat"
+alias gcmssh="ssh root@10.0.0.55"
+alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Use emacs keybinds
 bindkey -e
@@ -33,7 +37,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-# @Kevin Heritage
 alias vim='nvim'
 
 # Git commands
@@ -102,5 +105,8 @@ launch_claude() {
         fi
     fi
 }
-
 alias vibe='launch_claude'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

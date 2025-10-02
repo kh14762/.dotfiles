@@ -52,6 +52,8 @@ bindsym $mod+b exec google-chrome
 bindsym $mod+i exec idea
 # start postman 
 bindsym $mod+p exec postman
+# start draw.io
+bindsym $mod+o exec drawio
 
 # kill focused window
 bindsym $mod+Shift+q kill
