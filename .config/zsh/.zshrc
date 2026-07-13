@@ -44,9 +44,6 @@ alias cat="batcat"
 alias gcmssh="ssh root@10.0.0.55"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cat="batcat"
-alias vibe='launch_claude'
-alias boondev='~/.config/tmux/boonie-dev.sh'
 alias vim='nvim'
 
 # Use emacs keybinds
@@ -68,8 +65,6 @@ alias gc='git commit'
 alias gco='git checkout'
 alias gf='git fetch'
 alias lg='lazygit'
-
-alias gl='lazygit'
 
 # Bat
 # Highlight help msgs
@@ -112,38 +107,9 @@ _fzf_compgen_dir() {
 alias cd="z"
 eval "$(zoxide init zsh)"
 
-# Claude tmux launcher
-launch_claude() {
-    # Check if claude exists
-    if [ ! -e claude ]; then
-      echo "claude not installed..."
-      return 
-    fi
-
-    if tmux has-session -t claude 2>/dev/null; then
-        if [ -n "$TMUX" ]; then
-            tmux switch-client -t claude
-        else
-            tmux attach-session -t claude
-        fi
-    else
-        if [ -n "$TMUX" ]; then
-            tmux new-session -d -s claude 'claude'
-            tmux switch-client -t claude
-        else
-            tmux new-session -d -s claude 'claude'
-            tmux attach-session -t claude
-        fi
-    fi
-}
-alias vibe='launch_claude'
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# bun completions
-[ -s "/home/kev/.bun/_bun" ] && source "/home/kev/.bun/_bun"
-
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
