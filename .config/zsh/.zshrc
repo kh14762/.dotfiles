@@ -25,9 +25,20 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # @Kevin Heritage
+# load zsh specific functions
+for file in ~/.config/zsh/*.sh; do
+  [ -r "$file" ] && source "$file"
+done
+
+# Color
+export COLORTERM=truecolor
+export TERM=xterm-256color
+
+export ZSH_CONF="$HOME/.config/zsh/.zshrc"
+
 alias cat="batcat"
 alias gcmssh="ssh root@10.0.0.55"
-alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Use emacs keybinds
 bindkey -e
@@ -46,7 +57,7 @@ alias gb='git branch'
 alias gc='git commit'
 alias gco='git checkout'
 alias gf='git fetch'
-alias gl='lazygit'
+alias lg='lazygit'
 
 # Highlight help msgs
 alias bathelp='bat --plain --language=help'
