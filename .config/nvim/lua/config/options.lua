@@ -2,6 +2,12 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- Add nvm node path for LSP servers
+local nvm_node_path = os.getenv("HOME") .. "/.nvm/versions/node/v24.8.0/bin"
+if vim.fn.isdirectory(nvm_node_path) == 1 then
+  vim.env.PATH = nvm_node_path .. ":" .. vim.env.PATH
+end
+
 -- Set <space> as the leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -66,3 +72,41 @@ vim.opt.syntax = "on"
 
 -- Go fmt
 vim.g.autoformat = true
+
+-- Ignore web boilerplate in searches
+vim.opt.wildignore:append({
+  "node_modules/*",
+  ".git/*",
+  "*.o",
+  "*.obj",
+  "*.exe",
+  "*.so",
+  "*.dll",
+  "*.dylib",
+  ".DS_Store",
+  "*.zip",
+  "*.tar.gz",
+  "*.jpg",
+  "*.png",
+  "*.gif",
+  "*.pdf",
+  "*.svg",
+  "**/coverage/*",
+  "**/dist/*",
+  "**/build/*",
+  "**/.next/*",
+  "**/out/*",
+  "**/target/*",
+  "**/.nuxt/*",
+  "**/.cache/*",
+  "**/public/assets/*",
+  "*.min.js",
+  "*.min.css",
+  "**/vendor/*"
+})
+
+-- Set up ripgrep defaults for telescope/grep
+if vim.fn.executable("rg") == 1 then
+  vim.opt.grepprg = "rg --vimgrep --smart-case --follow"
+  vim.opt.grepformat = "%f:%l:%c:%m"
+end

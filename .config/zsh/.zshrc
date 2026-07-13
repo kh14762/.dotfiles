@@ -8,6 +8,10 @@ ZSH_THEME="eastwood"
 autoload -U compinit; compinit
 
 plugins=(git nvm fzf-tab)
+source ~/.oh-my-zsh/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
+
+# Which plugins would you like to load?
+plugins=(git fzf-tab)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,6 +43,11 @@ export ZSH_CONF="$HOME/.config/zsh/.zshrc"
 alias cat="batcat"
 alias gcmssh="ssh root@10.0.0.55"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cat="batcat"
+alias vibe='launch_claude'
+alias boondev='~/.config/tmux/boonie-dev.sh'
+alias vim='nvim'
 
 # Use emacs keybinds
 bindkey -e
@@ -49,6 +58,7 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 alias vim='nvim'
+# @Kevin Heritage
 
 # Git commands
 alias g='git'
@@ -59,6 +69,9 @@ alias gco='git checkout'
 alias gf='git fetch'
 alias lg='lazygit'
 
+alias gl='lazygit'
+
+# Bat
 # Highlight help msgs
 alias bathelp='bat --plain --language=help'
 help() {
@@ -75,6 +88,13 @@ fi
 if [ -f /usr/share/doc/fzf/examples/completion.zsh ]; then
   source /usr/share/doc/fzf/examples/completion.zsh
 fi
+
+# Preview file content using bat (https://github.com/sharkdp/bat)
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'
+"
 
 # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
@@ -121,3 +141,9 @@ alias vibe='launch_claude'
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# bun completions
+[ -s "/home/kev/.bun/_bun" ] && source "/home/kev/.bun/_bun"
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
