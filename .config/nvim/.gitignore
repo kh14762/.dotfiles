@@ -6,6 +6,3 @@ debug
 foo.*
 *.log
 data
-.zcompdump*
-.config/tmux/plugins
-
