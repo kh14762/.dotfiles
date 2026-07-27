@@ -1,33 +1,16 @@
 # My personal dotfiles
-
 This directory contains the dotfiles for my system
 
 ## Requirements 
-
 Ensure you have the following installed on your system
-
-### Git
-
 ```
-apt install git
-```
-### Stow
-
-```
-apt install stow
+git
+stow
 ```
 
 ## Installation 
-
 ```
-$ git@github.com:kh14762/.dotfiles.git
+$ git clone https://github.com/kh14762/.dotfiles.git 
 $ cd .dotfiles
-```
-
-then use GNU stow to create symlinks
-
-```
 $ stow .
 ```
-
-The inspiration for this configuration comes from the [dotfiles of dreamsofcode](https://github.com/dreamsofcode-io/dotfiles)
