@@ -10,6 +10,8 @@ export COLORTERM=truecolor
 export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 
+# Dedupe path entries
+typeset -U path PATH
 # Path setup
 path=(
     "$HOME/.local/bin"
