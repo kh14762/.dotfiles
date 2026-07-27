@@ -1,18 +1,27 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/gruvbox_dark.toml"
+]
+
+[window]
+opacity = 0.85
+blur = true
+
 [font]
 size = 11.0
 
 [font.normal]
-family = "Sarasa Term SC"
-style = "Light"
+family = "Sarasa Term SC Nerd Font"
+style = "Medium"
 
 [font.bold]
-family = "Sarasa Term SC"
-style = "SemiBold"
+family = "Sarasa Term SC Nerd Font"
+style = "Bold"
 
 [font.italic]
-family = "Sarasa Term SC"
+family = "Sarasa Term SC Nerd Font"
 style = "Italic"          # This links to the standard italic style block
 
 [font.bold_italic]
-family = "Sarasa Term SC"
+family = "Sarasa Term SC Nerd Font"
 style = "Bold Italic" 
