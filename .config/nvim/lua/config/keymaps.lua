@@ -39,8 +39,3 @@ vim.keymap.set("x", "<A-j>", "<Nop>")
 vim.keymap.set("x", "<A-k>", "<Nop>")
 vim.keymap.set("x", "J", "<Nop>")
 vim.keymap.set("x", "K", "<Nop>")
-
--- Go-specific keymaps
-vim.keymap.set("n", "<leader>co", function()
-  vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
-end, { desc = "Organize Imports" })
