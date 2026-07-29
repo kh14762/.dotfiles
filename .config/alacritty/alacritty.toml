@@ -1,11 +1,7 @@
 [general]
-import = [
-    "~/.config/alacritty/themes/gruvbox_dark.toml"
-]
-
-[window]
-opacity = 0.85
-blur = true
+# import = [
+#     "~/.config/alacritty/themes/gruvbox_dark.toml"
+# ]
 
 [font]
 size = 11.0
