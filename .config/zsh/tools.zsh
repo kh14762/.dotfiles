@@ -5,21 +5,17 @@ eval "$(zoxide init zsh --cmd cd)"
 
 # fzf
 eval "$(fzf --zsh)"
-
 export FZF_CTRL_T_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'bat -n --color=always {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'
 "
-
 _fzf_compgen_path() {
   fd --hidden --follow --exclude .git . "$1"
 }
-
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude .git . "$1"
 }
-
 
 # nvm
 [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"

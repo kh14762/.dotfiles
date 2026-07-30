@@ -1,29 +1,27 @@
-# Editor
+# Editors
 export EDITOR=nvim
 export VISUAL=nvim
-
-# Terminal
-export TERM=xterm-256color
-export COLORTERM=truecolor
 
 # Host-specific locations
 export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 
-# Dedupe path entries
-typeset -U path PATH
-# Path setup
-path=(
-    "$HOME/.local/bin"
-    "$HOME/bin"
-    "$HOME/opt/fzf/bin"
-    "/usr/local/bin"
-    "$HOME/go/bin"
-    "/usr/local/go/bin"
-    $path
-)
+# Ghostty
+export GHOSTTY_SHELL_FEATURES="title,sudo"
 
-# Neovim
+# Deduplicate PATH
+typeset -U path PATH
+
+for dir in \
+    "$HOME/.local/bin" \
+    "$HOME/bin" \
+    "$HOME/go/bin" \
+    "/usr/local/bin" \
+    "/usr/local/go/bin"
+do
+    [[ -d "$dir" ]] && path=("$dir" $path)
+done
+
 for dir in \
     "$HOME/neovim/bin" \
     "$HOME/local/nvim/bin" \
@@ -32,25 +30,7 @@ do
     [[ -d "$dir" ]] && path=("$dir" $path) && break
 done
 
-# Bun
 export BUN_INSTALL="$HOME/.bun"
-path=("$BUN_INSTALL/bin" $path)
+[[ -d "$BUN_INSTALL/bin" ]] && path=("$BUN_INSTALL/bin" $path)
 
-# WSL-specific settings
-if grep -qi microsoft /proc/version 2>/dev/null; then
-    export WINHOME="/mnt/c/Users/u341529"
-    path=("$HOME/.config/scripts/wsl" $path)
-fi
-
-# Ghostty
-export GHOSTTY_SHELL_FEATURES="title,sudo"
-
-# FZF
-export FZF_CTRL_T_OPTS="
-  --walker-skip .git,node_modules,target
-  --preview 'bat -n --color=always {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'
-"
-
-# Export path array as PATH
 export PATH
