@@ -15,4 +15,5 @@ data
 .config/mozilla/
 .config/pulse/
 .config/wireplumber/
-
+.config/QtProject.conf
+.config/obsidian/
